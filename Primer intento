@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class caca {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del teclado
+        Scanner scanner = new Scanner(System.in);
+
+        // Leer un número entero
+        System.out.print("Introduce un número entero: ");
+        int numero = scanner.nextInt();
+
+        // Mensaje basado en el número ingresado
+        System.out.println("Has ingresado el número: " + numero);
+        
+        if (numero > 0) {
+            System.out.println("Mientras más me la mamas, más me crece.");
+        } else if (numero < 0) {
+            System.out.println("Los números negativos tienen su propio estilo.");
+        } else {
+            System.out.println("¡El número cero también cuenta!");
+        }
+
+        // Cerrar el scanner para liberar recursos
+        scanner.close();
+    }
+}
