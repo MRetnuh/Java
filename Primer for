@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class caca {
+    public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+            System.out.print("Introduce un número entero: ");
+        int n = scanner.nextInt();
+        // Puedes cambiar este valor a cualquier número entero positivo
+  
+        // Bucle for que recorre desde 1 hasta n
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i);
+        }
+    }
+}
