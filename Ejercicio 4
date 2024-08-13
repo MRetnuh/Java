@@ -32,7 +32,7 @@ public class Main {
         System.out.print("La Division de los dos numeros es " + (numero / numero2));
  }
  System.out.println();
-  System.out.println("¿Desea realizar otra operación? (si/no): ");
+  System.out.println("¿Desea realizar otra operación? (coloque no si no quiere, y si quiere continuar, ingrese cualquier cosa): ");
             String respuesta = scanner.nextLine();
             if (respuesta.equalsIgnoreCase("no")) {
                 break;
