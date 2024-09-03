@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Ingrese dos numeros para ver cual es mayor: ");
+		double numero = scanner.nextDouble();
+       double numero2 = scanner.nextDouble();
+       if(numero > numero2){
+            System.out.print("El primer numero es mayor");
+       }
+        else if(numero < numero2){
+            System.out.print("El segundo numero es mayor");
+       }
+       else{
+            System.out.print("Ambos son iguales");
+       }
+	}
+}
