@@ -1,0 +1,19 @@
+package fdfdsdfsd;
+import java.util.Scanner;
+public class Ejercicios {
+	 
+	    public static void main(String[] args) {
+	    	for (int i = 1; i <= 100; i++) {
+	    		if(i % 2 == 0 && i % 3 == 0){
+			        System.out.println(i + " Es divisible por ambos");
+			    }
+	    		else if(i % 2 == 0){
+			        System.out.println(i + " Es divisible por dos");
+			    }
+	    		else if(i % 3 == 0){
+			        System.out.println(i + " Es divisible por 3");
+			    }
+		}
+	      
+	    }
+	}
