@@ -1,0 +1,20 @@
+package fdfdsdfsd;
+import java.util.Scanner;
+public class Ejercicios {
+	 
+	    public static void main(String[] args) {
+	    	System.out.println("Ingrese un numero: ");
+	    	Scanner scanner = new Scanner(System.in);
+	    	int numero = scanner.nextInt();
+	    	int copia = numero;
+	    	int i = 0;
+	    	while(numero > 0) {
+	    		numero = numero / 10;
+	    		i++;
+	    		if(numero < 0) {
+	    			break;
+	    		}
+	    	}
+	    	System.out.println(copia + " tiene " + i + " digitos");
+	   	}
+}
