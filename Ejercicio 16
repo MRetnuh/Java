@@ -1,0 +1,22 @@
+package fdfdsdfsd;
+import java.util.Scanner;
+public class Ejercicios {
+	 
+	    public static void main(String[] args) {
+	    	System.out.println("Establezca una contraseña ");
+	    	Scanner scanner = new Scanner(System.in);
+	    	String contraseña = scanner.nextLine(); 
+	    	String con = contraseña;
+	    	for(int i = 1; i <= 3; i++) {
+	    		System.out.println("Intento " + i);
+	    		String intento = scanner.nextLine(); 
+	    		if(intento.equals(con)) {
+	    			System.out.println("Enhorabuena ");
+	    			break;
+	    		}
+	    		else if(i == 3) {
+	    			System.out.println("No le atinaste ");
+	    		}
+	    	}
+	    }
+	}
