@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class SDFSDFSD {
+    public static void main(String[] args) {
+        System.out.println("Ingrese una palabra: ");
+        Scanner scanner = new Scanner(System.in);
+        String palabra = scanner.nextLine(); 
+        String resultado = palabra.replace('a', 'e');
+        System.out.println("La palabra ahora con sus 'a' siendo 'e' es: " + resultado);
+    }
+}
+
