@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class SDFSDFSD {
+	 public static void main(String[] args) {
+		 System.out.println("Ingrese una palabra: ");
+		 Scanner scanner = new Scanner(System.in);
+			String palabra = scanner.nextLine(); 
+	        String cadena= palabra;
+	        int contador=0;
+	        for (int i=0;i<cadena.length();i++){
+	            //Comprobamos si el caracter es una vocal
+	            if(cadena.charAt(i)=='a' || 
+	                    cadena.charAt(i)=='e' || 
+	                    cadena.charAt(i)=='i' || 
+	                    cadena.charAt(i)=='o' || 
+	                    cadena.charAt(i)=='u'){
+	                contador++;
+	            }
+	        }
+	 
+	        System.out.println("Hay "+contador+" vocales");
+	    }
+	
+}
