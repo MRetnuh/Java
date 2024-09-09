@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class SDFSDFSD {
+    public static void main(String[] args) {
+        System.out.println("Ingrese un numero: ");
+        Scanner scanner = new Scanner(System.in);
+        int numero = scanner.nextInt(); 
+        int resultado = 0;
+        while(numero >= 1) {
+        	resultado += numero;
+        	numero--;
+        }
+        System.out.println("El factorial del numero ingresado es: " + resultado);
+    }
+}
+
