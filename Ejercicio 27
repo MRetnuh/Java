@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class SDFSDFSD {
+    public static void main(String[] args) {
+        System.out.println("Ingrese numeros (que no sean -1): ");
+        Scanner scanner = new Scanner(System.in);
+        int resultado = 0;
+        while(true) {
+        	 int numero = scanner.nextInt(); 
+        	resultado++;
+        	if(numero == -1) {
+        		break;
+        	}
+        }
+        System.out.println("La cantidad de numeros ingresados: " + resultado);
+    }
+}
+
