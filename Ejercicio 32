@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class SDFSDFSD {
+	 public static void main(String[] args) {
+		 System.out.println("Ingrese dos palabras y veremos si son iguales");
+		 Scanner scanner = new Scanner(System.in);
+		 System.out.println("Palabra 1: ");
+			String palabra = scanner.nextLine(); 
+			 System.out.println("Palabra 2: ");
+			String SecondPalabra = scanner.nextLine(); 
+	        String first= palabra;
+	        String second= SecondPalabra;
+	        if(first.equals(second)) {
+	        	System.out.println("Son iguales");
+	            }
+	        else {
+	        	System.out.println("No son iguales");
+	        }
+	        
+	    }
+	
+}
