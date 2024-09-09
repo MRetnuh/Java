@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class SDFSDFSD {
+	 public static void main(String[] args) {
+		 System.out.println("Ingrese oraciones: ");
+		 Scanner scanner = new Scanner(System.in);
+			String palabra = scanner.nextLine(); 
+	        String cadena= palabra;
+	        int contador=0;
+	        while(contador < cadena.length()) {
+	                contador++;
+	            }
+	 
+	        System.out.println("La frase tiene " + contador + " letras");
+	    }
+	
+}
