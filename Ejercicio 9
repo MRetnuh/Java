@@ -1,0 +1,13 @@
+package ddasfsdf;
+import java.util.Scanner;
+public class kaka {
+	 
+		public static void main(String[] args) {
+			 Scanner scanner = new Scanner(System.in);
+			System.out.println("Ingrese el valor de un precio: ");
+			int precio = scanner.nextInt(); 
+			double IVA = 1.24;
+			System.out.println("El iva de " + precio + " es " + precio * IVA);
+		}
+	}
+
