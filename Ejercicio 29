@@ -1,29 +1,18 @@
+package ddasfsdf;
 import javax.swing.JOptionPane;
- 
-public class Ejercicio_basicos_DDR_29 {
- 
-    public static void main(String[] args) {
-       
-        String texto=JOptionPane.showInputDialog(null, 
-                                                 "Introduce un texto, cadena vacia para terminar", 
-                                                 "Introducir texto", 
-                                                 JOptionPane.INFORMATION_MESSAGE);
-       
-        String cadenaResultante="";
-        while(!texto.isEmpty()){
-            cadenaResultante+=texto;
-            texto=JOptionPane.showInputDialog(null, 
-                                            "Introduce un texto, cadena vacia para terminar", 
-                                            "Introducir texto", 
-                                            JOptionPane.INFORMATION_MESSAGE);
- 
-        }
-        
-        JOptionPane.showMessageDialog(null, 
-                                        cadenaResultante, 
-                                        "Resultado", 
-                                        JOptionPane.INFORMATION_MESSAGE);
-        
-    }
-    
-}
+public class kaka {
+	    public static void main(String[] args) {
+	    	String cadena = "";
+	    	while(true) {
+	        String frase=JOptionPane.showInputDialog("Introduce una frase");
+	        cadena += frase;
+	        if(frase.equals("")) {
+	        	break;
+	        }
+	    	}
+	        JOptionPane.showMessageDialog(null, 
+                    "La frase tiene sin espacios es "+cadena, 
+                    "Resultado", 
+                    JOptionPane.INFORMATION_MESSAGE);
+	    }
+	}
