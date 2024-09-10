@@ -1,0 +1,19 @@
+package ddasfsdf;
+import java.util.Scanner;
+public class kaka {
+	 
+	    public static void main(String[] args) {
+	    	 Scanner scanner = new Scanner(System.in);
+	        scanner.useDelimiter("\n");
+	        
+	        System.out.println("Escribe una frase");
+	        String frase=scanner.nextLine();
+	        String palabras[] = frase.split(" ");
+	        
+	        for(int i=0;i<palabras.length;i++){
+	            System.out.println(palabras[i]);
+	        }
+	        
+	    }
+	    
+	}
