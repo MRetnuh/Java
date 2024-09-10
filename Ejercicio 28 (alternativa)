@@ -4,8 +4,9 @@ public class kaka {
 	    public static void main(String[] args) {
 	        String frase=JOptionPane.showInputDialog("Introduce una frase");
 	        String fraseSinEspacios = frase.replace(" ", "");
-	        System.out.println("La frase sin espacios es: " + fraseSinEspacios);
+	        JOptionPane.showMessageDialog(null, 
+                    "La frase tiene sin espacios es "+fraseSinEspacios, 
+                    "Resultado", 
+                    JOptionPane.INFORMATION_MESSAGE);
 	    }
 	}
-	
-
