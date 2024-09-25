@@ -1,0 +1,105 @@
+package cañcilñadora;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
+public class asdsd extends JFrame implements ActionListener {
+
+    private JPanel contentPane;
+    private JTextField pantalla;
+    private String operador;
+    private double num1, num2, resultado;
+
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    asdsd frame = new asdsd();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the frame.
+     */
+    public asdsd() {
+        setTitle("Calculadora");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 300);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(new BorderLayout());
+
+        // Pantalla
+        pantalla = new JTextField();
+        pantalla.setEditable(false);
+        contentPane.add(pantalla, BorderLayout.NORTH);
+
+        // Panel de botones
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 4));
+
+        String[] botones = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "0", "C", "=", "+"
+        };
+
+        for (String texto : botones) {
+            JButton boton = new JButton(texto);
+            boton.addActionListener(this);
+            panel.add(boton);
+        }
+
+        contentPane.add(panel, BorderLayout.CENTER);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String comando = e.getActionCommand();
+
+        if (comando.charAt(0) >= '0' && comando.charAt(0) <= '9') {
+            pantalla.setText(pantalla.getText() + comando);
+        } else if (comando.equals("C")) {
+            pantalla.setText("");
+            num1 = num2 = resultado = 0;
+            operador = "";
+        } else if (comando.equals("=")) {
+            num2 = Double.parseDouble(pantalla.getText());
+            switch (operador) {
+                case "+":
+                    resultado = num1 + num2;
+                    break;
+                case "-":
+                    resultado = num1 - num2;
+                    break;
+                case "*":
+                    resultado = num1 * num2;
+                    break;
+                case "/":
+                    resultado = num1 / num2;
+                    break;
+            }
+            pantalla.setText(String.valueOf(resultado));
+            num1 = resultado; // Para continuar con el resultado
+            operador = "";
+        } else {
+            if (!operador.isEmpty()) return; // Evitar múltiples operadores
+            operador = comando;
+            num1 = Double.parseDouble(pantalla.getText());
+            pantalla.setText("");
+        }
+    }
+}
