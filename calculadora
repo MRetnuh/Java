@@ -1,4 +1,4 @@
-package cañcilñadora;
+package calculadora;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,11 +6,11 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class asdsd extends JFrame implements ActionListener {
+public class calculos extends JFrame implements ActionListener {
 
     private JPanel contentPane;
     private JTextField pantalla;
-    private String operador;
+    private String operador; // Esta es la variable que causa el problema
     private double num1, num2, resultado;
 
     /**
@@ -20,7 +20,7 @@ public class asdsd extends JFrame implements ActionListener {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    asdsd frame = new asdsd();
+                    calculos frame = new calculos();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -32,23 +32,26 @@ public class asdsd extends JFrame implements ActionListener {
     /**
      * Create the frame.
      */
-    public asdsd() {
+    public calculos() {
         setTitle("Calculadora");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 300, 400); // Tamaño de la ventana
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(new BorderLayout());
 
+        operador = ""; // Inicializar operador para evitar NullPointerException
+
         // Pantalla
         pantalla = new JTextField();
         pantalla.setEditable(false);
+        pantalla.setHorizontalAlignment(JTextField.RIGHT); // Alineación del texto a la derecha
         contentPane.add(pantalla, BorderLayout.NORTH);
 
         // Panel de botones
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 4));
+        panel.setLayout(new GridLayout(5, 4, 5, 5));  // 5 filas y 4 columnas, con espacio entre botones
 
         String[] botones = {
             "7", "8", "9", "/",
@@ -71,12 +74,15 @@ public class asdsd extends JFrame implements ActionListener {
         String comando = e.getActionCommand();
 
         if (comando.charAt(0) >= '0' && comando.charAt(0) <= '9') {
+            // Agrega los números a la pantalla
             pantalla.setText(pantalla.getText() + comando);
         } else if (comando.equals("C")) {
+            // Limpiar la pantalla
             pantalla.setText("");
             num1 = num2 = resultado = 0;
             operador = "";
         } else if (comando.equals("=")) {
+            // Realizar el cálculo cuando se presiona "="
             num2 = Double.parseDouble(pantalla.getText());
             switch (operador) {
                 case "+":
@@ -89,13 +95,19 @@ public class asdsd extends JFrame implements ActionListener {
                     resultado = num1 * num2;
                     break;
                 case "/":
-                    resultado = num1 / num2;
+                    if (num2 != 0) {
+                        resultado = num1 / num2;
+                    } else {
+                        pantalla.setText("Error");
+                        return;
+                    }
                     break;
             }
             pantalla.setText(String.valueOf(resultado));
             num1 = resultado; // Para continuar con el resultado
             operador = "";
         } else {
+            // Almacenar el operador seleccionado
             if (!operador.isEmpty()) return; // Evitar múltiples operadores
             operador = comando;
             num1 = Double.parseDouble(pantalla.getText());
